@@ -6,3 +6,4 @@
 #include <GL/glew.h>
 #endif
 
+void init
