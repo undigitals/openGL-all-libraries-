@@ -170,12 +170,12 @@ void DrawR_HandRocket() {
  */
 void DrawBody(int x, int a, int b, int c) {
     glPushMatrix();
-    Draw_Color(key);
-    cyl = gluNewQuadric();
-    glRotatef(90.0, 1.0, 0.0, 0.0);
-    glRotatef(x, a, b, c);
-    Change_Wire_Or_Solid(flag);
-    gluCylinder(cyl, 0.2, 0.2, 0.45, 50, 1);
+        Draw_Color(key);
+        cyl = gluNewQuadric();
+        glRotatef(90.0, 1.0, 0.0, 0.0);
+        glRotatef(x, a, b, c);
+        Change_Wire_Or_Solid(flag);
+        gluCylinder(cyl, 0.2, 0.2, 0.45, 50, 1);
     glPopMatrix();
 }
 /*
@@ -320,6 +320,7 @@ void DrawHead() {
     Change_Wire_Or_Solid(flag);
     Draw_Color(key);//color
     gluSphere(cyl, 0.20, 30, 10);// draw head
+    
     /*draw right horn */
     glRotatef(90.0, 1.0, 0.0, 0.0);// rotate
     glTranslatef(-0.16, 0.0, -0.22);// starting point of left horn
@@ -471,37 +472,32 @@ void ex()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //초기화
     glMatrixMode(GL_MODELVIEW); //모드 설정
 
-    glLoadIdentity(); //CTM 초기화
-    glRotatef(-180, 0, 1, 0); //y축 기준으로 회전
-    glRotatef(time6, 0, 0, 1); //time6 변수만큼 z축기준으로 회전
+    glLoadIdentity();
+    glRotatef(-180, 0, 1, 0);
+    glRotatef(time6, 0, 0, 1);
 
-    glScalef(0.4 / (sin(time3)), 0.4 / (sin(time3)), 0.4 / (sin(time3))); //0.4의 크기에서 sin()를 통한 크기조절을 주기적으로 가함에따라
-
-    glPushMatrix();// 처음 저장 좌표 다시 저장                                                              //멀어지고 가까워지는듯한 느낌을 표현
-    glTranslatef(0.0, 0.5, 0.0);//최초 위치
+    glScalef(0.4 / (sin(time3)), 0.4 / (sin(time3)), 0.4 / (sin(time3)));
+    glPushMatrix();
+    glTranslatef(0.0, 0.5, 0.0);
     DrawAndroid();
     glutSwapBuffers();
 }
-/*
- 김연아 선수의 모션을 취하는 함수
- */
+
 void Show()
 {
     //sndPlaySound(TEXT("C:\\sample4.wav"), SND_ASYNC | SND_NOSTOP);
     glLoadIdentity(); //CTM 초기화
 
-    /*
-     로봇의 기본적인 관절의 움직임 범위를 제한하는 곳
-     */
-    L_Arm_x = (-40) + sin(time2) * 60;//왼쪽 어깨의 각도시작은 -40상태에서 sin()함수를 사용하여 주기적인 움직임 설정
-    R_Arm_x = (-80) - L_Arm_x;       //우측 어깨의 각도시작은 -80상태에서 왼쪽어깨 움직임의 반대로 설정
-    R_Arm_y = -abs(int(cos(time2) * 10));  //우측팔뚝 각도조절(팔을 뻗는 움직임표현을위하여 어깨의 sin()함수와 반대인 cos()함수 사용)
-    L_Arm_y = -abs(int(-cos(time2) * 10)); //좌측팔뚝 각도조절(팔을 뻗는 움직임표현을위하여 어깨의 sin()함수와 반대인 cos()함수 사용)
+    
+    L_Arm_x = (-40) + sin(time2) * 60;
+    R_Arm_x = (-80) - L_Arm_x;
+    R_Arm_y = -abs(int(cos(time2) * 10));
+    L_Arm_y = -abs(int(-cos(time2) * 10));
 
-    R_Leg_y = abs(int(-sin(time) * 30 - 30)); //우측종아리 각도조절(abs절대값을 줌으로써 종아리가 앞으로 꺾이지 않는 한계점을 설정)
-    L_Leg_y = abs(int(sin(time) * 30 - 30));  //좌측종아리 각도조절(abs절대값을 줌으로써 종아리가 앞으로 꺾이지 않는 한계점을 설정)
-    R_Leg_x = sin(time) * 60;          //우측다리는 60도 각도까지 움직이되 sin()함수를 사용하여 주기적인 움직임 설정
-    L_Leg_x = -R_Leg_x;             //좌측다리는 우측다리반대로 60도 각도까지 움직이되 sin()함수를 사용하여 주기적인 움직임 설정
+    R_Leg_y = abs(int(-sin(time) * 30 - 30));
+    L_Leg_y = abs(int(sin(time) * 30 - 30));
+    R_Leg_x = sin(time) * 60;
+    L_Leg_x = -R_Leg_x;
 
     ////////////////display////////////////
 
@@ -509,19 +505,16 @@ void Show()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //초기화
     glMatrixMode(GL_MODELVIEW); //모드 설정
 
-    DrawGround(); //지면 호출
-    glLoadIdentity(); //CTM 초기화
-    glRotatef(-230.0, 0, 1, 0); //y축기준으로 회전
+    DrawGround();
+    glLoadIdentity();
+    glRotatef(-230.0, 0, 1, 0);
 
-    /*
-     로봇이 피겨동작시 몸이 틀어지는 것을 표현
-     */
-    glRotatef(sin(time) * 7, 0, 0, 1); //z축기준으로 7도 까지 각도틀어짐 (sin()함수를 사용하여 주기적인 움직임 설정)
-    glRotatef(sin(time) * 7, 0, 1, 0); //y축으로 7도 까지 각도틀어짐 (sin()함수를 사용하여 주기적인 움직임 설정)
+    
+    glRotatef(sin(time) * 7, 0, 0, 1);
+    glRotatef(sin(time) * 7, 0, 1, 0);
 
-    //로봇 몸체 각도 조절
-    glTranslatef(0.0, 0.18, 0.0); //y축으로 이동
-    glRotatef(80, 1, 0, 0);        //x축 기준으로 회전
+    glTranslatef(0.0, 0.18, 0.0);
+    glRotatef(80, 1, 0, 0);
 
     glTranslatef(0.0, 0.5, 0.0);//최초 위치
 
@@ -534,12 +527,11 @@ void Show()
 
     Drawneck(); // 목함수 호출
 
-    glPopMatrix(); // 처음 저장 좌표로 돌아 간다.
-    glPushMatrix();// 처음 저장 좌표 다시 저장
-
-    //머리 위치 설정
-    glRotatef(-75, 1, 0, 0); //x축기준으로 회전(머리를 위쪽으로 돌리기)
-    glTranslatef(0.0, -0.02, 0.0); //y축으로 이동 (머리 시작점)
+    glPopMatrix();
+    glPushMatrix();
+    
+    glRotatef(-75, 1, 0, 0);
+    glTranslatef(0.0, -0.02, 0.0);
 
     DrawHead(); // 머리 호출
 
@@ -586,9 +578,103 @@ void Show()
 
     glutSwapBuffers();
 }
-/*
- 로봇이 로켓을 날리는 모습을 표현한 함수
- */
+
+void DrawCloth(int x, int a, int b, int c) {
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    cyl = gluNewQuadric();
+    glRotatef(90.0, 1.0, 0.0, 0.0);
+    glRotatef(x, a, b, c);
+    Change_Wire_Or_Solid(flag);
+    gluCylinder(cyl, 0.2, 0.2, 0.45, 50, 1);
+    glPopMatrix();
+}
+void DrawR_ArmCloth(int x, int a, int b, int c) {
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    cyl = gluNewQuadric();
+    glRotatef(x, a, b, c);
+    glRotatef(90.0, 1.0, 0.0, 0.0);
+    glTranslatef(-0.25, 0.0, 0.0);
+    glRotatef(-15.0, 0.0, 1.0, 0.0);
+    Change_Wire_Or_Solid(flag);
+    gluCylinder(cyl, 0.05, 0.05, 0.2, 50, 1);
+    
+}
+void DrawL_ArmCloth(int x, int a, int b, int c) {
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);      // configure color
+    cyl = gluNewQuadric();   //create cylinder object
+    glRotatef(x, a, b, c);  //  rotate
+    glRotatef(90.0, 1.0, 0.0, 0.0);
+    glTranslatef(0.25, 0.0, 0.0);    //  move to the starting point of left shoulder
+    glRotatef(15.0, 0.0, 1.0, 0.0); //  rotate 15 degree for left shoulder
+    Change_Wire_Or_Solid(flag);
+    gluCylinder(cyl, 0.05, 0.05, 0.2, 50, 1); //  draw cylinder
+}
+void DrawR_LegsCloth(int x, int a, int b, int c) {
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    cyl = gluNewQuadric();
+    glRotatef(90.0, 1.0, 0.0, 0.0);
+    glTranslatef(-0.1, 0.0, 0.42);
+    glRotatef(x, a, b, c);
+    Change_Wire_Or_Solid(flag);
+    gluCylinder(cyl, 0.05, 0.05, 0.15, 50, 1);
+    
+}
+void DrawL_LegsCloth(int x, int a, int b, int c) {
+    glPushMatrix();
+    glColor3f(0.0, 0.0, 1.0);
+    cyl = gluNewQuadric();
+    glRotatef(90.0, 1.0, 0.0, 0.0);
+    glTranslatef(0.1, 0.0, 0.42);
+    glRotatef(x, a, b, c);
+    Change_Wire_Or_Solid(flag);
+    gluCylinder(cyl, 0.05, 0.05, 0.15, 50, 1);
+    
+}
+
+
+
+void DrawHeadCloth() {
+    glTranslatef(0.0, 0.02, 0.0);// head starting point
+    glPushMatrix();
+    cyl = gluNewQuadric();
+    Change_Wire_Or_Solid(flag);
+    Draw_Color(key);//color
+    gluSphere(cyl, 0.20, 30, 10);// draw head
+    
+    /*draw right horn */
+    glRotatef(90.0, 1.0, 0.0, 0.0);// rotate
+    glTranslatef(-0.16, 0.0, -0.22);// starting point of left horn
+    glRotatef(35.0, 0.0, 1.0, 0.0);
+    gluCylinder(cyl, 0.005, 0.008, 0.1, 3, 1);
+    glPopMatrix();
+    glPushMatrix();
+    
+    /*right horn*/
+    glRotatef(90.0, 1.0, 0.0, 0.0);
+    glTranslatef(0.16, 0.0, -0.22);
+    glRotatef(-35.0, 0.0, 1.0, 0.0);
+    gluCylinder(cyl, 0.005, 0.008, 0.1, 3, 1);
+    glPopMatrix();
+    glPushMatrix();
+    
+    /*left eye*/
+    glTranslatef(-0.1, 0.1, 0.13);
+    glColor3f(0.0, 0.0, 0.0);
+    gluSphere(cyl, 0.03, 10, 10);
+    
+    glPopMatrix();
+    glPushMatrix();
+    
+    /*right eye */
+    glTranslatef(0.1, 0.1, 0.13);
+    gluSphere(cyl, 0.03, 10, 10);
+    glPopMatrix();
+}
+
 void Rocket() {
     //sndPlaySound(TEXT("C:\\sample2.wav"), SND_ASYNC | SND_NOSTOP);
     glLoadIdentity();
@@ -618,11 +704,9 @@ void Rocket() {
     glPushMatrix();// 처음 저장 좌표 다시 저장
     glRotatef(-230.0, 0, 1, 0); //y축 기준으로 회전
 
-    /*
-     로봇이 로켓을 쏠 때 상,하,좌,우로 몸을 트는 모습을 설정
-     */
-    glRotatef(-abs(int(sin(time) * 8)), 1, 0, 0); //x축으로 8도 까지 각도틀어짐(abs절대값을 줌으로써 몸체가 뒤로 꺾이지 않는 한계점을 설정)
-    glRotatef(sin(time) * 7, 0, 0, 1);       //z축으로 7도 까지 각도틀어짐, sin()함수를 사용하여 주기적인 움직임 설정
+    
+    glRotatef(-abs(int(sin(time) * 8)), 1, 0, 0);
+    glRotatef(sin(time) * 7, 0, 0, 1);
 
     /*
      로봇이 로켓을 날리며 몸을 튕기는 모습을 표현
@@ -631,46 +715,24 @@ void Rocket() {
     i = abs(int(sin(time)*0.08)); //i값 설정
     glTranslatef(0.0, i, 0); //변수 i만큼 이동
     glTranslatef(0.0, 0.5, 0.0);//최초 위치
-    DrawAndroid();
+    
+    // DrawAndroid------------//
+        DrawCloth(0, 0, 0, 0);
+        Drawneck();
+        DrawHeadCloth();
+        DrawR_ArmCloth(R_Arm_x, 1, 0, 0);
+        if (key == ROCKET) DrawR_HandRocket();
+        else DrawR_Hand(R_Arm_y, 1, 0, 0);
+        DrawL_ArmCloth(L_Arm_x, 1, 0, 0);
+        if (key == ROCKET) DrawL_HandRocket();
+        else DrawL_Hand(L_Arm_y, 1, 0, 0);
+        DrawL_LegsCloth(L_Leg_x, 1, 0, 0);
+        DrawL_foot(L_Leg_y, 1, 0, 0);
+        DrawR_LegsCloth(R_Leg_x, 1, 0, 0);
+        DrawR_foot(R_Leg_y, 1, 0, 0);
+    //------------------------//
     glutSwapBuffers();
 }
-
-//void AndroidDrive() {
-//    //sndPlaySound(TEXT("C:\\sample3.wav"), SND_ASYNC | SND_NOSTOP);
-//    glLoadIdentity();//CTM 초기화
-//
-//    //L_Arm_x = -90;
-//    R_Arm_x = -90;
-//
-//    //left hand
-//    //R = 2 * abs(int(sin(time2)*0.8 - 0.2)) + 0.2;
-//
-//    R2 = 2 * abs(int(sin(time2)*0.8 - 0.2)) + 0.2;
-//
-//    ////////////////display////////////////
-//
-//    cyl = gluNewQuadric(); //실린더 객체 생성
-//    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //초기화
-//    glMatrixMode(GL_MODELVIEW); //모드 설정
-//
-//    drawCar();
-//    glLoadIdentity();
-//
-//    DrawGround(); //지면 호출
-//    glLoadIdentity(); //CTM 초기화
-//
-//    glRotatef(-230.0, 0, 1, 0); //y축기준으로 회전
-//
-//    glRotatef(sin(time) * 10, 0, 0, 1);//로봇의 좌,우 반동 표현(좌우로 10도 만큼 주기적인 움직임 설정)
-//
-//    float j = 0;
-//    j = abs(int(sin(time2)*0.085));// j값 설정
-//    glPushMatrix();// 처음 저장 좌표 다시 저장
-//    glTranslatef(0.0, j, 0); //변수 j만큼 로봇의 몸체가 Y축기준으로 움직임.
-//    glTranslatef(0.0, 0.5, 0.0);//최초 위치
-//    DrawAndroid();
-//    glutSwapBuffers();
-//}
 
 void MyKeyboard(unsigned char KeyPressed, int x, int y) {
     switch (KeyPressed) {
@@ -686,13 +748,6 @@ void MyKeyboard(unsigned char KeyPressed, int x, int y) {
     }
 }
 
-/*
- key 값에 따라 노래가 흘러나온다.
- 노래 재생은 sndPlaySound 함수로 흘러나오게 설정하였다.
- 각 key 값의 뜻은 각 장면을 뜻한다.
- 별도의 음악파일이 필요하며 경로설정은
- sndPlaySound(TEXT("음악파일경로") 를 입력하면 된다.
- */
 void MyDisplay() {
     if (key == RUN) {//로봇이 달릴때
         Run();
@@ -740,12 +795,12 @@ int main(int argc, char** argv) {
     glutCreateWindow("Robot Animation");//윈도우 생성
     glInit(); // 조명 초기화
     GLint MyMainMenuID = glutCreateMenu(MyMainMenu);//메뉴추가
-    glutAddMenuEntry("Run~", 1);//로봇이 달리는 모션 메뉴 추가
-    glutAddMenuEntry("AndroidDriver~", 2);//로봇이 잽날리는 모션 메뉴 추가
-    glutAddMenuEntry("Fly~", 3);//로봇이 로켓펀치를 날리는 모션 메뉴 추가
-    glutAddMenuEntry("Skating~", 4);//로봇이 피겨스케이팅하는 모션 메뉴 추가
+    //glutAddMenuEntry("Run~", 1);//로봇이 달리는 모션 메뉴 추가
+    glutAddMenuEntry("AndroidDriver", 2);//로봇이 잽날리는 모션 메뉴 추가
+    glutAddMenuEntry("AndroidWithCloth", 3);//로봇이 로켓펀치를 날리는 모션 메뉴 추가
+    //glutAddMenuEntry("Skating~", 4);//로봇이 피겨스케이팅하는 모션 메뉴 추가
     glutAddMenuEntry("Pause", 5);//로봇이 하는 일을 멈추게 하는 메뉴 추가
-    glutAddMenuEntry("zoom", 6);
+    //glutAddMenuEntry("zoom", 6);
     glutAttachMenu(GLUT_RIGHT_BUTTON);//오른쪽우스클릭시메뉴팝업
     glutKeyboardFunc(MyKeyboard); //키보드 콜백
     glutTimerFunc(40, MyTimer, 1); //타이머 함수
