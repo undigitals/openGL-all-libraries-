@@ -1,9 +1,18 @@
-#include <stdio.h>
-#include <stdlib.h>
-//#include <SFML/audio.hpp>
+#ifndef _APPLE_
 #include <GLUT/GLUT.h>
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
+//#include <SFML/audio.hpp>
+
+#else
+#include <windows.h>
+#include <MMSystem.h>
+#include <GL/glut.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
+
+#include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 
 static double time = 0;  // Run_time variable
@@ -809,4 +818,5 @@ int main(int argc, char** argv) {
     return 0;
 }
 
+#endif
 
