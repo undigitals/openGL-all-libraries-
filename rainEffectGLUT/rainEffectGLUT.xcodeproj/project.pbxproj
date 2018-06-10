@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3923419B20CDC31900D33349 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3923419A20CDC31900D33349 /* main.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
-		392341A320CDC32500D33349 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392341A220CDC32500D33349 /* OpenGL.framework */; };
-		392341A520CDC32C00D33349 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392341A420CDC32C00D33349 /* GLUT.framework */; };
+		392341B320CDDAB900D33349 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 392341B220CDDAB900D33349 /* main.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
+		392341BB20CDDAC600D33349 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392341BA20CDDAC600D33349 /* GLUT.framework */; };
+		392341BD20CDDACC00D33349 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392341BC20CDDACC00D33349 /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3923419520CDC31900D33349 /* CopyFiles */ = {
+		392341AD20CDDAB900D33349 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,55 +25,55 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3923419720CDC31900D33349 /* 3dCubeAnimGlut */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 3dCubeAnimGlut; sourceTree = BUILT_PRODUCTS_DIR; };
-		3923419A20CDC31900D33349 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		392341A220CDC32500D33349 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		392341A420CDC32C00D33349 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		392341AF20CDDAB900D33349 /* rainEffectGLUT */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = rainEffectGLUT; sourceTree = BUILT_PRODUCTS_DIR; };
+		392341B220CDDAB900D33349 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		392341BA20CDDAC600D33349 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		392341BC20CDDACC00D33349 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3923419420CDC31900D33349 /* Frameworks */ = {
+		392341AC20CDDAB900D33349 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				392341A520CDC32C00D33349 /* GLUT.framework in Frameworks */,
-				392341A320CDC32500D33349 /* OpenGL.framework in Frameworks */,
+				392341BD20CDDACC00D33349 /* OpenGL.framework in Frameworks */,
+				392341BB20CDDAC600D33349 /* GLUT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3923418E20CDC31900D33349 = {
+		392341A620CDDAB900D33349 = {
 			isa = PBXGroup;
 			children = (
-				3923419920CDC31900D33349 /* 3dCubeAnimGlut */,
-				3923419820CDC31900D33349 /* Products */,
-				392341A120CDC32500D33349 /* Frameworks */,
+				392341B120CDDAB900D33349 /* rainEffectGLUT */,
+				392341B020CDDAB900D33349 /* Products */,
+				392341B920CDDAC600D33349 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		3923419820CDC31900D33349 /* Products */ = {
+		392341B020CDDAB900D33349 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3923419720CDC31900D33349 /* 3dCubeAnimGlut */,
+				392341AF20CDDAB900D33349 /* rainEffectGLUT */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3923419920CDC31900D33349 /* 3dCubeAnimGlut */ = {
+		392341B120CDDAB900D33349 /* rainEffectGLUT */ = {
 			isa = PBXGroup;
 			children = (
-				3923419A20CDC31900D33349 /* main.cpp */,
+				392341B220CDDAB900D33349 /* main.cpp */,
 			);
-			path = 3dCubeAnimGlut;
+			path = rainEffectGLUT;
 			sourceTree = "<group>";
 		};
-		392341A120CDC32500D33349 /* Frameworks */ = {
+		392341B920CDDAC600D33349 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				392341A420CDC32C00D33349 /* GLUT.framework */,
-				392341A220CDC32500D33349 /* OpenGL.framework */,
+				392341BC20CDDACC00D33349 /* OpenGL.framework */,
+				392341BA20CDDAC600D33349 /* GLUT.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -81,68 +81,68 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3923419620CDC31900D33349 /* 3dCubeAnimGlut */ = {
+		392341AE20CDDAB900D33349 /* rainEffectGLUT */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3923419E20CDC31900D33349 /* Build configuration list for PBXNativeTarget "3dCubeAnimGlut" */;
+			buildConfigurationList = 392341B620CDDAB900D33349 /* Build configuration list for PBXNativeTarget "rainEffectGLUT" */;
 			buildPhases = (
-				3923419320CDC31900D33349 /* Sources */,
-				3923419420CDC31900D33349 /* Frameworks */,
-				3923419520CDC31900D33349 /* CopyFiles */,
+				392341AB20CDDAB900D33349 /* Sources */,
+				392341AC20CDDAB900D33349 /* Frameworks */,
+				392341AD20CDDAB900D33349 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = 3dCubeAnimGlut;
-			productName = 3dCubeAnimGlut;
-			productReference = 3923419720CDC31900D33349 /* 3dCubeAnimGlut */;
+			name = rainEffectGLUT;
+			productName = rainEffectGLUT;
+			productReference = 392341AF20CDDAB900D33349 /* rainEffectGLUT */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3923418F20CDC31900D33349 /* Project object */ = {
+		392341A720CDDAB900D33349 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Umid Negmatullayev";
 				TargetAttributes = {
-					3923419620CDC31900D33349 = {
+					392341AE20CDDAB900D33349 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 3923419220CDC31900D33349 /* Build configuration list for PBXProject "3dCubeAnimGlut" */;
+			buildConfigurationList = 392341AA20CDDAB900D33349 /* Build configuration list for PBXProject "rainEffectGLUT" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 3923418E20CDC31900D33349;
-			productRefGroup = 3923419820CDC31900D33349 /* Products */;
+			mainGroup = 392341A620CDDAB900D33349;
+			productRefGroup = 392341B020CDDAB900D33349 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3923419620CDC31900D33349 /* 3dCubeAnimGlut */,
+				392341AE20CDDAB900D33349 /* rainEffectGLUT */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3923419320CDC31900D33349 /* Sources */ = {
+		392341AB20CDDAB900D33349 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3923419B20CDC31900D33349 /* main.cpp in Sources */,
+				392341B320CDDAB900D33349 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		3923419C20CDC31900D33349 /* Debug */ = {
+		392341B420CDDAB900D33349 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -197,7 +197,7 @@
 			};
 			name = Debug;
 		};
-		3923419D20CDC31900D33349 /* Release */ = {
+		392341B520CDDAB900D33349 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -245,7 +245,7 @@
 			};
 			name = Release;
 		};
-		3923419F20CDC31900D33349 /* Debug */ = {
+		392341B720CDDAB900D33349 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -253,7 +253,7 @@
 			};
 			name = Debug;
 		};
-		392341A020CDC31900D33349 /* Release */ = {
+		392341B820CDDAB900D33349 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -264,25 +264,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3923419220CDC31900D33349 /* Build configuration list for PBXProject "3dCubeAnimGlut" */ = {
+		392341AA20CDDAB900D33349 /* Build configuration list for PBXProject "rainEffectGLUT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3923419C20CDC31900D33349 /* Debug */,
-				3923419D20CDC31900D33349 /* Release */,
+				392341B420CDDAB900D33349 /* Debug */,
+				392341B520CDDAB900D33349 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3923419E20CDC31900D33349 /* Build configuration list for PBXNativeTarget "3dCubeAnimGlut" */ = {
+		392341B620CDDAB900D33349 /* Build configuration list for PBXNativeTarget "rainEffectGLUT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3923419F20CDC31900D33349 /* Debug */,
-				392341A020CDC31900D33349 /* Release */,
+				392341B720CDDAB900D33349 /* Debug */,
+				392341B820CDDAB900D33349 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3923418F20CDC31900D33349 /* Project object */;
+	rootObject = 392341A720CDDAB900D33349 /* Project object */;
 }
